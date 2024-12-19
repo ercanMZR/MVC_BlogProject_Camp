@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IBlogDal
+    public interface IBlogDal:IGenericDal<Blog>//IGenericDal'dan miras alındı.
     {
         List<Blog> ListAllBlog();//ListAllBlog metodu oluşturuldu.Blog listesi döndürecek.
         void AddBlog(Blog blog);//Blog ekleme metodu oluşturuldu.blog parametresi alacak.

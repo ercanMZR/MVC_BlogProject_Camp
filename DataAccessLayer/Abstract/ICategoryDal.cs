@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface ICategoryDal
+    public interface ICategoryDal:IGenericDal<Category>//IGenericDal'dan miras alındı.
     {
         List<Category>ListAllCategory();//ListAllCategory metodu oluşturuldu.Categori listesi döndürecek.
 
