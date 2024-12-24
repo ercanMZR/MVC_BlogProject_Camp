@@ -9,7 +9,26 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.EntityFramework
 {
-    public class EfCategoryRepository:GenericRepository<Category>, ICategoryDal
+    public class EfCategoryRepository : GenericRepository<Category>, ICategoryDal
     {
+        public void AddCategory(Category category)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteCategory(Category category)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Category> ListAllCategory()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateCategory(Category category)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

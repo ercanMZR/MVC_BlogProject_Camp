@@ -18,6 +18,11 @@ namespace DataAccessLayer.Repositories
             c.SaveChanges();//Değişiklikleri kaydet.
         }
 
+        public void Delete(Category t)
+        {
+            throw new NotImplementedException();
+        }
+
         public void DeleteCategory(Category category)
         {
             c.Remove(category);//Gelen category'i sil.
@@ -29,9 +34,24 @@ namespace DataAccessLayer.Repositories
             return c.Categories.Find(id);//ID'ye göre Category getir.
         }
 
+        public List<Category> GetListAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Insert(Category t)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Category> ListAllCategory()
         {
             return c.Categories.ToList();//Tüm categorileri listele.
+        }
+
+        public void Update(Category t)
+        {
+            throw new NotImplementedException();
         }
 
         public void UpdateCategory(Category category)

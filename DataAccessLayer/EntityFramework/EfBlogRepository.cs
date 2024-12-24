@@ -9,7 +9,26 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.EntityFramework
 {
-    internal class EfBlogRepository:GenericRepository<Blog>,IBlogDal
+    internal class EfBlogRepository : GenericRepository<Blog>, IBlogDal
     {
+        public void AddBlog(Blog blog)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteBlog(Blog blog)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Blog> ListAllBlog()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateBlog(Blog blog)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

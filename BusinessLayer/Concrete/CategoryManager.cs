@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Abstact;
+using DataAccessLayer.Abstract;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
@@ -11,35 +12,35 @@ namespace BusinessLayer.Concrete
 {
     public class CategoryManager : ICategoryService
     {
-        EfCategoryRepository efCategoryRepository;
+        ICategoryDal _categoryDal;//ICategoryDal türünde _categoryDal isminde bir field tanımladık.
 
-        public CategoryManager()//burdaki contructor ile EfCategoryRepository sınıfını newlemiş olduk.Constructor metotlar sınıf ismi ile aynı isimde olmalıdır.contructor metotlar sınıfı newlediğimizde çalışan metotlardır.Constructor metotların amacı sınıfı newlediğimizde çalışacak kodları içermektir.
+        public CategoryManager(ICategoryDal categoryDal)
         {
-            efCategoryRepository = new EfCategoryRepository();
+            _categoryDal = categoryDal;//Constructor metot ile _categoryDal field'ına parametre olarak gelen categoryDal nesnesini atadık.
         }
         public void CategoryAdd(Category category)
         {
-            efCategoryRepository.Insert(category);//EfCategoryRepository sınıfındaki Insert metotunu çağırdık ve parametre olarak category nesnesini verdik.
+           _categoryDal.Insert(category);//EfCategoryRepository sınıfındaki Insert metotunu çağırdık ve parametre olarak category nesnesini verdik._categoryDal field'ı ICategoryDal türünde olduğu için burada EfCategoryRepository sınıfındaki metotları kullanabiliyoruz.
         }
 
         public void CategoryDelete(Category category)
         {
-            efCategoryRepository.Delete(category);//EfCategoryRepository sınıfındaki Delete metotunu çağırdık ve parametre olarak category nesnesini verdik.
+           _categoryDal.Delete(category);//EfCategoryRepository sınıfındaki Delete metotunu çağırdık ve parametre olarak category nesnesini verdik.
         }
 
         public void CategoryUpdate(Category category)
         {
-            efCategoryRepository.Update(category);//EfCategoryRepository sınıfındaki Update metotunu çağırdık ve parametre olarak category nesnesini verdik.
+            _categoryDal.Update(category);//EfCategoryRepository sınıfındaki Update metotunu çağırdık ve parametre olarak category nesnesini verdik.
         }
 
         public Category GetById(int id)
         {
-           return efCategoryRepository.GetByID(id);//EfCategoryRepository sınıfındaki GetByID metotunu çağırdık ve parametre olarak id değerini verdik.
+           return _categoryDal.GetByID(id);//EfCategoryRepository sınıfındaki GetByID metotunu çağırdık ve parametre olarak id değerini verdik.
         }
 
         public List<Category> GetList()
         {
-            return efCategoryRepository.GetListAll();//EfCategoryRepository sınıfındaki GetListAll metotunu çağırdık.Return ile yazmamaızın sebebi bu metotun geriye değer döndürmesi.
+            return _categoryDal.GetListAll();//EfCategoryRepository sınıfındaki GetListAll metotunu çağırdık.Return ile yazmamaızın sebebi bu metotun geriye değer döndürmesi.
         }
     }
 }
