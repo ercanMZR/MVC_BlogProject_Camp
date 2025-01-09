@@ -20,22 +20,27 @@ namespace BusinessLayer.Concrete
 
         public void BlogAdd(Blog blog)
         {
-            throw new NotImplementedException();
+           _blogDal.Insert(blog);//_blogDal nesnesi üzerinden Insert metotunu çağırıyoruz.
         }
 
         public void BlogDelete(Blog blog)
         {
-            throw new NotImplementedException();
+            _blogDal.Delete(blog);//_blogDal nesnesi üzerinden Delete metotunu çağırıyoruz.
         }
 
         public void BlogUpdate(Blog blog)
         {
-            throw new NotImplementedException();
+            _blogDal.Update(blog);//_blogDal nesnesi üzerinden Update metotunu çağırıyoruz.
+        }
+
+        public List<Blog> GetBlogID(int id)
+        {
+             return _blogDal.GetListAll(x => x.BlogID == id);//_blogDal nesnesi üzerinden GetListAll metotunu çağırıyoruz.
         }
 
         public Blog GetById(int id)
         {
-            throw new NotImplementedException();
+            return _blogDal.GetByID(id);//_blogDal nesnesi üzerinden GetByID metotunu çağırıyoruz.
         }
 
         public List<Blog> GetList()

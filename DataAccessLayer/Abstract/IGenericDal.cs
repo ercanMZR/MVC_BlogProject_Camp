@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,5 +18,8 @@ namespace DataAccessLayer.Abstract
         List<T> GetListAll();// Dışarıdan parametre almayan tüm listeleri getirir.
 
         T GetByID(int id);//ID'ye göre getir.
+
+        List<T> GetListAll(Expression<Func<T, bool>> filter);//Filtreleme yapar.
+
     }
 }
