@@ -16,6 +16,7 @@ namespace MVC_ProjectCamp.Controllers
 
         public IActionResult BlogReadAll(int id)
         {
+            ViewBag.i = id;//ViewBag ile id'yi BlogReadAll.cshtml sayfasına gönderir.
             var  values= bm.GetBlogID(id);//BlogManager sınıfından türetilen bm nesnesi üzerinden GetBlogID metotunu çağırır.
             return View(values);
         }

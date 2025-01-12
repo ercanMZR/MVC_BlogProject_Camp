@@ -16,11 +16,13 @@ namespace EntityLayer.Concrete
 
         public string WriterAbout { get; set; }
 
-        public string WriterIamge { get; set; }
+        public string WriterImage { get; set; }
 
         public string WriterPassword { get; set; }
 
         public bool WriterStatus { get; set; }
+
+        public string WriterMail { get; set; }
 
 
 
