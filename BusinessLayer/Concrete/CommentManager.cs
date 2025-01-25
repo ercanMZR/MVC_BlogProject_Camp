@@ -20,7 +20,7 @@ namespace BusinessLayer.Concrete
 
         public void CommentAdd(Comment comment)
         {
-            throw new NotImplementedException();
+            _commentdal.Insert(comment);//_commentdal nesnesi üzerinden Insert metotu çağrılır ve parametre olarak gelen comment nesnesi gönderilir.
         }
 
         public List<Comment> GetList(int id)

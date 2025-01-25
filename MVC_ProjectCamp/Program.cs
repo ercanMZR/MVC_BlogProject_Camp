@@ -13,6 +13,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UseStatusCodePagesWithReExecute("/ErrorPage/Error1", "?code={0}");//Hata kodu ile sayfaya yönlendirme yapar.?code={0} ile hata kodunu alýr.
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 

@@ -17,6 +17,8 @@ namespace BusinessLayer.Abstact
 
         List<Blog> GetBlogListWithCategory();//Kategori ile birlikte blogları getirir.
 
-        
+        List<Blog> GetBlogListByWriter(int id);//Yazar ID'sine göre blogları getirir.
+
+
     }
 }

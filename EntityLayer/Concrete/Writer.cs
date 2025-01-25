@@ -24,6 +24,8 @@ namespace EntityLayer.Concrete
 
         public string WriterMail { get; set; }
 
+        public List<Blog> Blogs { get; set; }
+
 
 
 
